@@ -277,6 +277,7 @@ partial class MainForm
         // splitContainer3.Panel2
         // 
         splitContainer3.Panel2.Controls.Add(panelWalks);
+        splitContainer3.Panel2MinSize = 200;
         splitContainer3.Size = new Size(580, 413);
         splitContainer3.SplitterDistance = 190;
         splitContainer3.TabIndex = 0;
@@ -424,7 +425,6 @@ partial class MainForm
         menuMain.Name = "menuMain";
         menuMain.Size = new Size(1000, 24);
         menuMain.TabIndex = 3;
-        menuMain.Text = "menuStrip1";
         // 
         // fileMainMenuItem
         // 

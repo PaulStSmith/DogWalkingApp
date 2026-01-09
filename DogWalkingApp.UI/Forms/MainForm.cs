@@ -1259,12 +1259,11 @@ public partial class MainForm : Form
         }
     }
 
-    #endregion
-
     /// <summary>
-    /// Handles the Click event of the exit file menu item.
+    /// Handles the Click event of the Exit menu item and closes the application window.
     /// </summary>
-    /// <param name="sender">The source of the event.</param>
-    /// <param name="e">The event data.</param>
-    private void ExitFileMenuItem_Click(object sender, EventArgs e) => Close();
+    /// <param name="sender">The source of the event, typically the Exit menu item.</param>
+    /// <param name="e">An EventArgs object that contains the event data.</param>
+    private async void ExitFileMenuItem_Click(object sender, EventArgs e) => Close();
+    #endregion
 }
