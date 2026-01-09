@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  <!-- Client Validation Messages -->
+  <data name="ClientNameRequired" xml:space="preserve">
+    <value>Client name is required.</value>
+    <comment>Error when client name is empty</comment>
+  </data>
+  <data name="ClientNameTooLong" xml:space="preserve">
+    <value>Client name cannot exceed 100 characters.</value>
+    <comment>Error when client name is too long</comment>
+  </data>
+  <data name="PhoneRequired" xml:space="preserve">
+    <value>Phone number is required.</value>
+    <comment>Error when phone number is empty</comment>
+  </data>
+  <data name="PhoneInvalid" xml:space="preserve">
+    <value>Phone number format is invalid.</value>
+    <comment>Error when phone number format is wrong</comment>
+  </data>
+  
+  <!-- Dog Validation Messages -->
+  <data name="DogNameRequired" xml:space="preserve">
+    <value>Dog name is required.</value>
+    <comment>Error when dog name is empty</comment>
+  </data>
+  <data name="DogNameTooLong" xml:space="preserve">
+    <value>Dog name cannot exceed 50 characters.</value>
+    <comment>Error when dog name is too long</comment>
+  </data>
+  <data name="BreedRequired" xml:space="preserve">
+    <value>Dog breed is required.</value>
+    <comment>Error when dog breed is empty</comment>
+  </data>
+  <data name="BreedTooLong" xml:space="preserve">
+    <value>Dog breed cannot exceed 50 characters.</value>
+    <comment>Error when dog breed is too long</comment>
+  </data>
+  <data name="AgeInvalid" xml:space="preserve">
+    <value>Dog age must be between 1 and 30 years.</value>
+    <comment>Error when dog age is out of range</comment>
+  </data>
+  <data name="ClientIdRequired" xml:space="preserve">
+    <value>Valid client ID is required.</value>
+    <comment>Error when client ID is invalid</comment>
+  </data>
+  
+  <!-- Walk Validation Messages -->
+  <data name="DogIdRequired" xml:space="preserve">
+    <value>Valid dog ID is required.</value>
+    <comment>Error when dog ID is invalid</comment>
+  </data>
+  <data name="WalkDateInvalid" xml:space="preserve">
+    <value>Walk date/time cannot be more than 1 day in the future.</value>
+    <comment>Error when walk date is too far in future</comment>
+  </data>
+  <data name="WalkDateTooOld" xml:space="preserve">
+    <value>Walk date/time cannot be more than 1 year in the past.</value>
+    <comment>Error when walk date is too far in past</comment>
+  </data>
+  <data name="DurationInvalid" xml:space="preserve">
+    <value>Walk duration must be between 5 and 240 minutes.</value>
+    <comment>Error when walk duration is out of range</comment>
+  </data>
+  <data name="NotesTooLong" xml:space="preserve">
+    <value>Walk notes cannot exceed 500 characters.</value>
+    <comment>Error when walk notes are too long</comment>
+  </data>
+  
+  <!-- Login Validation Messages -->
+  <data name="UsernameRequired" xml:space="preserve">
+    <value>Username is required.</value>
+    <comment>Error when username is empty</comment>
+  </data>
+  <data name="PasswordRequired" xml:space="preserve">
+    <value>Password is required.</value>
+    <comment>Error when password is empty</comment>
+  </data>
+  <data name="InvalidCredentials" xml:space="preserve">
+    <value>Invalid username or password.</value>
+    <comment>Error when login credentials are wrong</comment>
+  </data>
+</root>

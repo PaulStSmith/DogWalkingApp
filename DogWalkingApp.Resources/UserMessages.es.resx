@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  
+  <!-- Spanish Success Messages -->
+  <data name="ClientSaved" xml:space="preserve">
+    <value>Cliente guardado exitosamente.</value>
+    <comment>Mensaje de éxito cuando se guarda un cliente</comment>
+  </data>
+  <data name="DogSaved" xml:space="preserve">
+    <value>Perro guardado exitosamente.</value>
+    <comment>Mensaje de éxito cuando se guarda un perro</comment>
+  </data>
+  <data name="WalkSaved" xml:space="preserve">
+    <value>Paseo guardado exitosamente.</value>
+    <comment>Mensaje de éxito cuando se guarda un paseo</comment>
+  </data>
+  <data name="LoginSuccessful" xml:space="preserve">
+    <value>Inicio de sesión exitoso.</value>
+    <comment>Mensaje de éxito para el inicio de sesión</comment>
+  </data>
+  
+  <!-- Spanish Error Messages -->
+  <data name="ErrorSavingData" xml:space="preserve">
+    <value>Error al guardar los datos. Por favor, inténtelo de nuevo.</value>
+    <comment>Mensaje de error genérico para fallos al guardar datos</comment>
+  </data>
+  <data name="ErrorLoadingData" xml:space="preserve">
+    <value>Error al cargar los datos. Por favor, verifique su conexión a la base de datos.</value>
+    <comment>Mensaje de error para fallos al cargar datos</comment>
+  </data>
+  <data name="ErrorDeletingData" xml:space="preserve">
+    <value>Error al eliminar los datos. Por favor, inténtelo de nuevo.</value>
+    <comment>Mensaje de error para fallos al eliminar datos</comment>
+  </data>
+  <data name="DatabaseConnectionError" xml:space="preserve">
+    <value>No se pudo conectar a la base de datos. Por favor, verifique su conexión.</value>
+    <comment>Mensaje de error para problemas de conexión a la base de datos</comment>
+  </data>
+  
+  <!-- Spanish General Messages -->
+  <data name="SelectClient" xml:space="preserve">
+    <value>Por favor, seleccione un cliente para ver los detalles.</value>
+    <comment>Mensaje cuando no hay cliente seleccionado</comment>
+  </data>
+  <data name="SelectDog" xml:space="preserve">
+    <value>Por favor, seleccione un perro para ver los paseos.</value>
+    <comment>Mensaje cuando no hay perro seleccionado</comment>
+  </data>
+  <data name="NoResultsFound" xml:space="preserve">
+    <value>No se encontraron resultados para su búsqueda.</value>
+    <comment>Mensaje cuando la búsqueda no devuelve resultados</comment>
+  </data>
+  <data name="SearchPlaceholder" xml:space="preserve">
+    <value>Buscar clientes, perros o paseos...</value>
+    <comment>Texto de marcador de posición para el cuadro de búsqueda</comment>
+  </data>
+  
+  <!-- Mensajes de Selección -->
+  <data name="PleaseSelectClientToEdit" xml:space="preserve">
+    <value>Por favor seleccione un cliente para editar.</value>
+    <comment>Mensaje cuando no hay cliente seleccionado para editar</comment>
+  </data>
+  <data name="PleaseSelectClientToDelete" xml:space="preserve">
+    <value>Por favor seleccione un cliente para eliminar.</value>
+    <comment>Mensaje cuando no hay cliente seleccionado para eliminar</comment>
+  </data>
+  <data name="PleaseSelectClientForDog" xml:space="preserve">
+    <value>Por favor seleccione un cliente primero para agregar un perro.</value>
+    <comment>Mensaje cuando no hay cliente seleccionado antes de agregar perro</comment>
+  </data>
+  <data name="PleaseSelectDogToEdit" xml:space="preserve">
+    <value>Por favor seleccione un perro para editar.</value>
+    <comment>Mensaje cuando no hay perro seleccionado para editar</comment>
+  </data>
+  <data name="PleaseSelectDogToDelete" xml:space="preserve">
+    <value>Por favor seleccione un perro para eliminar.</value>
+    <comment>Mensaje cuando no hay perro seleccionado para eliminar</comment>
+  </data>
+  <data name="PleaseSelectDogForWalk" xml:space="preserve">
+    <value>Por favor seleccione un perro primero para agregar un paseo.</value>
+    <comment>Mensaje cuando no hay perro seleccionado antes de agregar paseo</comment>
+  </data>
+  <data name="PleaseSelectWalkToEdit" xml:space="preserve">
+    <value>Por favor seleccione un paseo para editar.</value>
+    <comment>Mensaje cuando no hay paseo seleccionado para editar</comment>
+  </data>
+  <data name="PleaseSelectWalkToDelete" xml:space="preserve">
+    <value>Por favor seleccione un paseo para eliminar.</value>
+    <comment>Mensaje cuando no hay paseo seleccionado para eliminar</comment>
+  </data>
+  
+  <!-- Mensajes de Confirmación -->
+  <data name="ConfirmDeleteClient" xml:space="preserve">
+    <value>¿Está seguro de que desea eliminar el cliente '{0}' y todos los perros y paseos asociados?</value>
+    <comment>Mensaje de confirmación para eliminar un cliente</comment>
+  </data>
+  <data name="ConfirmDeleteDog" xml:space="preserve">
+    <value>¿Está seguro de que desea eliminar el perro '{0}' y todos los paseos asociados?</value>
+    <comment>Mensaje de confirmación para eliminar un perro</comment>
+  </data>
+  <data name="ConfirmDeleteWalk" xml:space="preserve">
+    <value>¿Está seguro de que desea eliminar el paseo del {0}?</value>
+    <comment>Mensaje de confirmación para eliminar un paseo</comment>
+  </data>
+  
+  <!-- Mensajes de Éxito -->
+  <data name="ClientSavedSuccessfully" xml:space="preserve">
+    <value>Cliente guardado exitosamente.</value>
+    <comment>Mensaje de éxito después de guardar cliente</comment>
+  </data>
+  <data name="ClientDeletedSuccessfully" xml:space="preserve">
+    <value>Cliente eliminado exitosamente.</value>
+    <comment>Mensaje de éxito después de eliminar cliente</comment>
+  </data>
+  <data name="DogAddedSuccessfully" xml:space="preserve">
+    <value>Perro agregado exitosamente.</value>
+    <comment>Mensaje de éxito después de agregar perro</comment>
+  </data>
+  <data name="DogUpdatedSuccessfully" xml:space="preserve">
+    <value>Perro actualizado exitosamente.</value>
+    <comment>Mensaje de éxito después de actualizar perro</comment>
+  </data>
+  <data name="DogDeletedSuccessfully" xml:space="preserve">
+    <value>Perro eliminado exitosamente.</value>
+    <comment>Mensaje de éxito después de eliminar perro</comment>
+  </data>
+  <data name="WalkAddedSuccessfully" xml:space="preserve">
+    <value>Paseo agregado exitosamente.</value>
+    <comment>Mensaje de éxito después de agregar paseo</comment>
+  </data>
+  <data name="WalkUpdatedSuccessfully" xml:space="preserve">
+    <value>Paseo actualizado exitosamente.</value>
+    <comment>Mensaje de éxito después de actualizar paseo</comment>
+  </data>
+  <data name="WalkDeletedSuccessfully" xml:space="preserve">
+    <value>Paseo eliminado exitosamente.</value>
+    <comment>Mensaje de éxito después de eliminar paseo</comment>
+  </data>
+  
+  <!-- Mensajes de Error -->
+  <data name="ErrorSavingClient" xml:space="preserve">
+    <value>Error al guardar cliente: {0}</value>
+    <comment>Mensaje de error cuando falla guardar cliente</comment>
+  </data>
+  <data name="ErrorDeletingClient" xml:space="preserve">
+    <value>Error al eliminar cliente: {0}</value>
+    <comment>Mensaje de error cuando falla eliminar cliente</comment>
+  </data>
+  <data name="ErrorAddingDog" xml:space="preserve">
+    <value>Error al agregar perro: {0}</value>
+    <comment>Mensaje de error cuando falla agregar perro</comment>
+  </data>
+  <data name="ErrorUpdatingDog" xml:space="preserve">
+    <value>Error al actualizar perro: {0}</value>
+    <comment>Mensaje de error cuando falla actualizar perro</comment>
+  </data>
+  <data name="ErrorDeletingDog" xml:space="preserve">
+    <value>Error al eliminar perro: {0}</value>
+    <comment>Mensaje de error cuando falla eliminar perro</comment>
+  </data>
+  <data name="ErrorAddingWalk" xml:space="preserve">
+    <value>Error al agregar paseo: {0}</value>
+    <comment>Mensaje de error cuando falla agregar paseo</comment>
+  </data>
+  <data name="ErrorUpdatingWalk" xml:space="preserve">
+    <value>Error al actualizar paseo: {0}</value>
+    <comment>Mensaje de error cuando falla actualizar paseo</comment>
+  </data>
+  <data name="ErrorDeletingWalk" xml:space="preserve">
+    <value>Error al eliminar paseo: {0}</value>
+    <comment>Mensaje de error cuando falla eliminar paseo</comment>
+  </data>
+  <data name="DatabaseSetupError" xml:space="preserve">
+    <value>Error de configuración de base de datos: {0}</value>
+    <comment>Mensaje de error cuando falla la configuración de la base de datos</comment>
+  </data>
+  
+  <!-- Mensajes de Inicio de Sesión -->
+  <data name="PleaseEnterCredentials" xml:space="preserve">
+    <value>Por favor ingrese usuario y contraseña.</value>
+    <comment>Mensaje de validación para credenciales vacías</comment>
+  </data>
+  <data name="InvalidCredentials" xml:space="preserve">
+    <value>Usuario o contraseña inválidos.</value>
+    <comment>Mensaje de error para credenciales inválidas</comment>
+  </data>
+  <data name="LoginError" xml:space="preserve">
+    <value>Error de inicio de sesión: {0}</value>
+    <comment>Mensaje general de error de inicio de sesión</comment>
+  </data>
+  
+  <!-- Títulos de MessageBox -->
+  <data name="NoSelection" xml:space="preserve">
+    <value>Sin Selección</value>
+    <comment>Título para cajas de mensaje sin selección</comment>
+  </data>
+  <data name="NoClientSelected" xml:space="preserve">
+    <value>Ningún Cliente Seleccionado</value>
+    <comment>Título cuando no hay cliente seleccionado</comment>
+  </data>
+  <data name="NoDogSelected" xml:space="preserve">
+    <value>Ningún Perro Seleccionado</value>
+    <comment>Título cuando no hay perro seleccionado</comment>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Éxito</value>
+    <comment>Título para cajas de mensaje de éxito</comment>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+    <comment>Título para cajas de mensaje de error</comment>
+  </data>
+</root>

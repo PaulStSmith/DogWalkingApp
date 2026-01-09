@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  <!-- Form Title Resources -->
+  <data name="MainForm" xml:space="preserve">
+    <value>🐕 Dog Walking Manager</value>
+    <comment>Main application window title</comment>
+  </data>
+  <data name="LoginForm" xml:space="preserve">
+    <value>🔐 Login</value>
+    <comment>Login dialog title</comment>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login - Dog Walking Manager</value>
+    <comment>Login form title with app name</comment>
+  </data>
+  <data name="NewDog" xml:space="preserve">
+    <value>🐕 Add New Dog</value>
+    <comment>Add dog dialog title</comment>
+  </data>
+  <data name="EditDog" xml:space="preserve">
+    <value>✏️ Edit Dog</value>
+    <comment>Edit dog dialog title</comment>
+  </data>
+  <data name="NewWalk" xml:space="preserve">
+    <value>🚶 Add New Walk</value>
+    <comment>Add walk dialog title</comment>
+  </data>
+  <data name="EditWalk" xml:space="preserve">
+    <value>✏️ Edit Walk</value>
+    <comment>Edit walk dialog title</comment>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>⚠️ Confirm Delete</value>
+    <comment>Delete confirmation dialog title</comment>
+  </data>
+  <data name="ValidationError" xml:space="preserve">
+    <value>❌ Validation Error</value>
+    <comment>Validation error dialog title</comment>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>⚠️ Error</value>
+    <comment>General error dialog title</comment>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>ℹ️ Information</value>
+    <comment>Information dialog title</comment>
+  </data>
+  <data name="DogEditor" xml:space="preserve">
+    <value>Dog Editor</value>
+    <comment>Dog editor form title</comment>
+  </data>
+  <data name="DogEditorWithIcon" xml:space="preserve">
+    <value>🐕 Dog Editor</value>
+    <comment>Dog editor form title with icon</comment>
+  </data>
+  <data name="WalkEditor" xml:space="preserve">
+    <value>Walk Editor</value>
+    <comment>Walk editor form title</comment>
+  </data>
+  <data name="WalkEditorWithIcon" xml:space="preserve">
+    <value>🚶 Walk Editor</value>
+    <comment>Walk editor form title with icon</comment>
+  </data>
+  <data name="MainFormHierarchical" xml:space="preserve">
+    <value>Dog Walking Manager - Hierarchical View</value>
+    <comment>Main form title with view indicator</comment>
+  </data>
+</root>

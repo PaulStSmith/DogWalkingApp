@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  <!-- Spanish Form Title Resources -->
+  <data name="MainForm" xml:space="preserve">
+    <value>🐕 Administrador de Paseos de Perros</value>
+    <comment>Título de la ventana principal de la aplicación</comment>
+  </data>
+  <data name="LoginForm" xml:space="preserve">
+    <value>🔐 Inicio de Sesión</value>
+    <comment>Título del diálogo de inicio de sesión</comment>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Inicio de Sesión - Administrador de Paseos de Perros</value>
+    <comment>Título del formulario de inicio de sesión con nombre de la app</comment>
+  </data>
+  <data name="NewDog" xml:space="preserve">
+    <value>🐕 Agregar Nuevo Perro</value>
+    <comment>Título del diálogo para agregar perro</comment>
+  </data>
+  <data name="EditDog" xml:space="preserve">
+    <value>✏️ Editar Perro</value>
+    <comment>Título del diálogo para editar perro</comment>
+  </data>
+  <data name="NewWalk" xml:space="preserve">
+    <value>🚶 Agregar Nuevo Paseo</value>
+    <comment>Título del diálogo para agregar paseo</comment>
+  </data>
+  <data name="EditWalk" xml:space="preserve">
+    <value>✏️ Editar Paseo</value>
+    <comment>Título del diálogo para editar paseo</comment>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>⚠️ Confirmar Eliminación</value>
+    <comment>Título del diálogo de confirmación de eliminación</comment>
+  </data>
+  <data name="ValidationError" xml:space="preserve">
+    <value>❌ Error de Validación</value>
+    <comment>Título del diálogo de error de validación</comment>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>⚠️ Error</value>
+    <comment>Título del diálogo de error general</comment>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>ℹ️ Información</value>
+    <comment>Título del diálogo de información</comment>
+  </data>
+  <data name="DogEditor" xml:space="preserve">
+    <value>Editor de Perros</value>
+    <comment>Título del formulario de editor de perros</comment>
+  </data>
+  <data name="DogEditorWithIcon" xml:space="preserve">
+    <value>🐕 Editor de Perros</value>
+    <comment>Título del formulario de editor de perros con icono</comment>
+  </data>
+  <data name="WalkEditor" xml:space="preserve">
+    <value>Editor de Paseos</value>
+    <comment>Título del formulario de editor de paseos</comment>
+  </data>
+  <data name="WalkEditorWithIcon" xml:space="preserve">
+    <value>🚶 Editor de Paseos</value>
+    <comment>Título del formulario de editor de paseos con icono</comment>
+  </data>
+  <data name="MainFormHierarchical" xml:space="preserve">
+    <value>Gestor de Paseos de Perros - Vista Jerárquica</value>
+    <comment>Título del formulario principal con indicador de vista</comment>
+  </data>
+</root>

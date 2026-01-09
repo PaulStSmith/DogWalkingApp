@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  <!-- Spanish Client Validation Messages -->
+  <data name="ClientNameRequired" xml:space="preserve">
+    <value>El nombre del cliente es obligatorio.</value>
+    <comment>Error cuando el nombre del cliente está vacío</comment>
+  </data>
+  <data name="ClientNameTooLong" xml:space="preserve">
+    <value>El nombre del cliente no puede exceder 100 caracteres.</value>
+    <comment>Error cuando el nombre del cliente es demasiado largo</comment>
+  </data>
+  <data name="PhoneRequired" xml:space="preserve">
+    <value>El número de teléfono es obligatorio.</value>
+    <comment>Error cuando el número de teléfono está vacío</comment>
+  </data>
+  <data name="PhoneInvalid" xml:space="preserve">
+    <value>El formato del número de teléfono es inválido.</value>
+    <comment>Error cuando el formato del número de teléfono es incorrecto</comment>
+  </data>
+  
+  <!-- Spanish Dog Validation Messages -->
+  <data name="DogNameRequired" xml:space="preserve">
+    <value>El nombre del perro es obligatorio.</value>
+    <comment>Error cuando el nombre del perro está vacío</comment>
+  </data>
+  <data name="DogNameTooLong" xml:space="preserve">
+    <value>El nombre del perro no puede exceder 50 caracteres.</value>
+    <comment>Error cuando el nombre del perro es demasiado largo</comment>
+  </data>
+  <data name="BreedRequired" xml:space="preserve">
+    <value>La raza del perro es obligatoria.</value>
+    <comment>Error cuando la raza del perro está vacía</comment>
+  </data>
+  <data name="BreedTooLong" xml:space="preserve">
+    <value>La raza del perro no puede exceder 50 caracteres.</value>
+    <comment>Error cuando la raza del perro es demasiado larga</comment>
+  </data>
+  <data name="AgeInvalid" xml:space="preserve">
+    <value>La edad del perro debe estar entre 1 y 30 años.</value>
+    <comment>Error cuando la edad del perro está fuera de rango</comment>
+  </data>
+  <data name="ClientIdRequired" xml:space="preserve">
+    <value>Se requiere un ID de cliente válido.</value>
+    <comment>Error cuando el ID del cliente es inválido</comment>
+  </data>
+  
+  <!-- Spanish Walk Validation Messages -->
+  <data name="DogIdRequired" xml:space="preserve">
+    <value>Se requiere un ID de perro válido.</value>
+    <comment>Error cuando el ID del perro es inválido</comment>
+  </data>
+  <data name="WalkDateInvalid" xml:space="preserve">
+    <value>La fecha/hora del paseo no puede ser más de 1 día en el futuro.</value>
+    <comment>Error cuando la fecha del paseo está muy en el futuro</comment>
+  </data>
+  <data name="WalkDateTooOld" xml:space="preserve">
+    <value>La fecha/hora del paseo no puede ser más de 1 año en el pasado.</value>
+    <comment>Error cuando la fecha del paseo está muy en el pasado</comment>
+  </data>
+  <data name="DurationInvalid" xml:space="preserve">
+    <value>La duración del paseo debe estar entre 5 y 240 minutos.</value>
+    <comment>Error cuando la duración del paseo está fuera de rango</comment>
+  </data>
+  <data name="NotesTooLong" xml:space="preserve">
+    <value>Las notas del paseo no pueden exceder 500 caracteres.</value>
+    <comment>Error cuando las notas del paseo son demasiado largas</comment>
+  </data>
+  
+  <!-- Spanish Login Validation Messages -->
+  <data name="UsernameRequired" xml:space="preserve">
+    <value>El nombre de usuario es obligatorio.</value>
+    <comment>Error cuando el nombre de usuario está vacío</comment>
+  </data>
+  <data name="PasswordRequired" xml:space="preserve">
+    <value>La contraseña es obligatoria.</value>
+    <comment>Error cuando la contraseña está vacía</comment>
+  </data>
+  <data name="InvalidCredentials" xml:space="preserve">
+    <value>Nombre de usuario o contraseña inválidos.</value>
+    <comment>Error cuando las credenciales de inicio de sesión son incorrectas</comment>
+  </data>
+</root>

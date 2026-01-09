@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  <!-- Form Field Labels -->
+  <data name="Name" xml:space="preserve">
+    <value>Name:</value>
+    <comment>Label for name fields</comment>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone:</value>
+    <comment>Label for phone number field</comment>
+  </data>
+  <data name="Breed" xml:space="preserve">
+    <value>Breed:</value>
+    <comment>Label for dog breed field</comment>
+  </data>
+  <data name="Age" xml:space="preserve">
+    <value>Age:</value>
+    <comment>Label for age field</comment>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date:</value>
+    <comment>Label for date field</comment>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Time:</value>
+    <comment>Label for time field</comment>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>Duration (minutes):</value>
+    <comment>Label for duration field</comment>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Notes:</value>
+    <comment>Label for notes field</comment>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username:</value>
+    <comment>Label for username field</comment>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password:</value>
+    <comment>Label for password field</comment>
+  </data>
+  
+  <!-- Section Headers -->
+  <data name="ClientDetails" xml:space="preserve">
+    <value>Client Details</value>
+    <comment>Section header for client information</comment>
+  </data>
+  <data name="DogInformation" xml:space="preserve">
+    <value>Dog Information</value>
+    <comment>Section header for dog information</comment>
+  </data>
+  <data name="WalkDetails" xml:space="preserve">
+    <value>Walk Details</value>
+    <comment>Section header for walk information</comment>
+  </data>
+  <data name="Dogs" xml:space="preserve">
+    <value>Dogs</value>
+    <comment>Section header for dogs list</comment>
+  </data>
+  <data name="Walks" xml:space="preserve">
+    <value>Walks</value>
+    <comment>Section header for walks list</comment>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search:</value>
+    <comment>Label for search field</comment>
+  </data>
+  
+  <!-- Grid Column Headers -->
+  <data name="ColumnName" xml:space="preserve">
+    <value>Name</value>
+    <comment>Grid column header for name</comment>
+  </data>
+  <data name="ColumnBreed" xml:space="preserve">
+    <value>Breed</value>
+    <comment>Grid column header for breed</comment>
+  </data>
+  <data name="ColumnAge" xml:space="preserve">
+    <value>Age</value>
+    <comment>Grid column header for age</comment>
+  </data>
+  <data name="ColumnDate" xml:space="preserve">
+    <value>Date</value>
+    <comment>Grid column header for date</comment>
+  </data>
+  <data name="ColumnTime" xml:space="preserve">
+    <value>Time</value>
+    <comment>Grid column header for time</comment>
+  </data>
+  <data name="ColumnDuration" xml:space="preserve">
+    <value>Duration</value>
+    <comment>Grid column header for duration</comment>
+  </data>
+  <data name="ColumnNotes" xml:space="preserve">
+    <value>Notes</value>
+    <comment>Grid column header for notes</comment>
+  </data>
+  <data name="ColumnActions" xml:space="preserve">
+    <value>Actions</value>
+    <comment>Grid column header for action buttons</comment>
+  </data>
+  <data name="ColumnWalks" xml:space="preserve">
+    <value>Walks</value>
+    <comment>Grid column header for walk count</comment>
+  </data>
+  
+  <!-- Status and Help Text -->
+  <data name="YearsOld" xml:space="preserve">
+    <value>years old</value>
+    <comment>Text suffix for age display</comment>
+  </data>
+  <data name="LoginCredentials" xml:space="preserve">
+    <value>Login Credentials</value>
+    <comment>Login credentials group label</comment>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>minutes</value>
+    <comment>Text for duration unit</comment>
+  </data>
+  <data name="NoSelection" xml:space="preserve">
+    <value>No selection</value>
+    <comment>Text when nothing is selected</comment>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading...</value>
+    <comment>Text shown while loading data</comment>
+  </data>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>Dog Walking Manager</value>
+    <comment>Main application title</comment>
+  </data>
+  <data name="WalkFor" xml:space="preserve">
+    <value>Walk for: [Dog]</value>
+    <comment>Walk editor dog info label</comment>
+  </data>
+  <data name="DateTime" xml:space="preserve">
+    <value>Date/Time:</value>
+    <comment>Date/Time field label</comment>
+  </data>
+  <data name="DurationMinutes" xml:space="preserve">
+    <value>Duration:</value>
+    <comment>Duration field label</comment>
+  </data>
+  <data name="ClientDetailsWithIcon" xml:space="preserve">
+    <value>🙍 Client Details</value>
+    <comment>Client section with icon</comment>
+  </data>
+  <data name="DogsForSelectedClient" xml:space="preserve">
+    <value>🐕 Dogs for Selected Client</value>
+    <comment>Dogs section with icon</comment>
+  </data>
+  <data name="WalksForSelectedDog" xml:space="preserve">
+    <value>🚶 Walks for Selected Dog</value>
+    <comment>Walks section with icon</comment>
+  </data>
+  <data name="SearchWithIcon" xml:space="preserve">
+    <value>🔍 Search</value>
+    <comment>Search label with icon</comment>
+  </data>
+  
+  <!-- DataGridView Column Headers -->
+  <data name="ColumnWalksCount" xml:space="preserve">
+    <value>Walks</value>
+    <comment>Column header for walks count</comment>
+  </data>
+</root>
