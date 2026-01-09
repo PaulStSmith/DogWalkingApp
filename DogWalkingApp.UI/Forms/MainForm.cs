@@ -24,7 +24,7 @@ public partial class MainForm : Form
     private BindingSource _walksBindingSource = null!;
     private BindingList<DogGridRowViewModel> _dogsList = null!;
     private BindingList<WalkGridRowViewModel> _walksList = null!;
-    
+
     // Store original values for cancel functionality
     private string _originalClientName = string.Empty;
     private string _originalClientPhone = string.Empty;
@@ -47,57 +47,57 @@ public partial class MainForm : Form
     {
         // Form title
         Text = FormTitles.MainFormHierarchical;
-        
+
         // Section headers
         lblClientTitle.Text = Labels.ClientDetailsWithIcon;
         lblDogsTitle.Text = Labels.DogsForSelectedClient;
         lblWalksTitle.Text = Labels.WalksForSelectedDog;
         label1.Text = Labels.SearchWithIcon;
-        
+
         // Field labels
         lblClientName.Text = Labels.Name;
         lblClientPhone.Text = Labels.Phone;
-        
+
         // Client buttons
         btnClientNew.Text = ButtonText.New;
         btnClientEdit.Text = ButtonText.Edit;
         btnClientSave.Text = ButtonText.Save;
         btnClientDelete.Text = ButtonText.Delete;
-        
+
         // Dog buttons
         btnDogNew.Text = ButtonText.New;
         btnDogEdit.Text = ButtonText.Edit;
         btnDogDelete.Text = ButtonText.Delete;
-        
+
         // Walk buttons
         btnWalkNew.Text = ButtonText.New;
         btnWalkEdit.Text = ButtonText.Edit;
         btnWalkDelete.Text = ButtonText.Delete;
-        
+
         // Apply localized sizing
         ApplyLocalizedSizing();
     }
-    
+
     /// <summary>
     /// Applies culture-specific sizing to UI elements.
     /// </summary>
     private void ApplyLocalizedSizing()
     {
-        ConversionHelper.SetIntValue(width => 
+        ConversionHelper.SetIntValue(width =>
         {
             btnClientNew.Width = width;
             btnDogNew.Width = width;
             btnWalkNew.Width = width;
         }, UISizes.ButtonNewWidth);
 
-        ConversionHelper.SetIntValue(width => 
+        ConversionHelper.SetIntValue(width =>
         {
             btnClientEdit.Width = width;
             btnDogEdit.Width = width;
             btnWalkEdit.Width = width;
         }, UISizes.ButtonEditWidth);
-            
-        ConversionHelper.SetIntValue(width => 
+
+        ConversionHelper.SetIntValue(width =>
         {
             btnClientDelete.Width = width;
             btnDogDelete.Width = width;
@@ -119,59 +119,59 @@ public partial class MainForm : Form
         // Initialize database context and services
         var databaseService = new DatabaseService();
         var context = databaseService.CreateContext();
-        
+
         var walkRepo = new WalkRepository(context);
         var clientRepo = new ClientRepository(context);
         _walkService = new WalkService(walkRepo, clientRepo);
 
         // Initialize tree view model
         _treeViewModel = new HierarchicalTreeViewModel();
-        
+
         // Initialize data binding objects
         _clientDetailViewModel = new ClientDetailViewModel();
         _dogsList = [];
         _walksList = [];
         _dogsBindingSource = new BindingSource(_dogsList, null);
         _walksBindingSource = new BindingSource(_walksList, null);
-        
+
         // Setup SIMPLE binding for client details
         txtClientName.DataBindings.Add("Text", _clientDetailViewModel, "Name", false, DataSourceUpdateMode.OnPropertyChanged);
         txtClientPhone.DataBindings.Add("Text", _clientDetailViewModel, "Phone", false, DataSourceUpdateMode.OnPropertyChanged);
-        
+
         // Make client textboxes readonly initially
         txtClientName.ReadOnly = true;
         txtClientPhone.ReadOnly = true;
-        
+
         // Hide save button initially
         btnClientSave.Visible = false;
-        
+
         // Setup COMPLEX binding for DataGridViews
         dgvDogs.DataSource = _dogsBindingSource;
         dgvWalks.DataSource = _walksBindingSource;
-        
+
         // Configure DataGridView columns
         ConfigureDataGridViewColumns();
-        
+
         // Wire up event handlers
         treeViewHierarchy.AfterSelect += TreeViewHierarchy_AfterSelect;
         dgvDogs.SelectionChanged += DgvDogs_SelectionChanged;
-        
+
         // Wire up client button events
         btnClientNew.Click += BtnClientNew_Click;
         btnClientEdit.Click += BtnClientEdit_Click;
         btnClientSave.Click += BtnClientSave_Click;
         btnClientDelete.Click += BtnClientDelete_Click;
-        
+
         // Wire up dog button events
         btnDogNew.Click += BtnDogNew_Click;
         btnDogEdit.Click += BtnDogEdit_Click;
         btnDogDelete.Click += BtnDogDelete_Click;
-        
+
         // Wire up walk button events
         btnWalkNew.Click += BtnWalkNew_Click;
         btnWalkEdit.Click += BtnWalkEdit_Click;
         btnWalkDelete.Click += BtnWalkDelete_Click;
-        
+
         // Wire up search functionality
         txtSearchTerm.TextChanged += TxtSearchTerm_TextChanged;
     }
@@ -197,7 +197,7 @@ public partial class MainForm : Form
 
             // Load all clients with their dogs and walks
             var clients = await _walkService!.GetAllClientsWithDetailsAsync();
-            
+
             // Convert to view models
             var clientGroups = clients.Select(client => new ClientTreeNodeViewModel
             {
@@ -230,7 +230,7 @@ public partial class MainForm : Form
 
             _treeViewModel.Clients = clientGroups;
             PopulateTreeView();
-            
+
             // Select specific items if requested, otherwise restore previous selection
             if (selectClientId.HasValue || selectDogId.HasValue || selectWalkId.HasValue)
             {
@@ -243,7 +243,7 @@ public partial class MainForm : Form
         }
         catch (Exception ex)
         {
-            MessageBox.Show($"Error loading hierarchical data: {ex.Message}", "Error", 
+            MessageBox.Show($"Error loading hierarchical data: {ex.Message}", "Error",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
@@ -348,7 +348,7 @@ public partial class MainForm : Form
     private void RefreshDogsListForClient(int clientId)
     {
         _dogsList.Clear();
-        
+
         // Find the client in the fresh tree view model data
         var client = _treeViewModel.Clients.FirstOrDefault(c => c.ClientId == clientId);
         if (client != null)
@@ -375,12 +375,12 @@ public partial class MainForm : Form
     private void RefreshWalksListForDog(int dogId)
     {
         _walksList.Clear();
-        
+
         // Find the dog in the fresh tree view model data
         var dog = _treeViewModel.Clients
             .SelectMany(c => c.Dogs)
             .FirstOrDefault(d => d.DogId == dogId);
-            
+
         if (dog != null)
         {
             foreach (var walk in dog.Walks)
@@ -499,9 +499,9 @@ public partial class MainForm : Form
 
                 foreach (var walk in dog.Walks.Take(10)) // Show latest 10 walks per dog
                 {
-                    var walkMatches = !string.IsNullOrEmpty(walk.Notes) && 
+                    var walkMatches = !string.IsNullOrEmpty(walk.Notes) &&
                                     walk.Notes.Contains(searchTerm, StringComparison.InvariantCultureIgnoreCase);
-                    
+
                     if (walkMatches || dogMatches || clientMatches)
                     {
                         var walkNode = new TreeNode(walk.DisplayText)
@@ -535,7 +535,7 @@ public partial class MainForm : Form
 
         treeViewHierarchy.EndUpdate();
     }
-    
+
     /// <summary>
     /// Configures the columns for the DataGridViews.
     /// </summary>
@@ -544,60 +544,60 @@ public partial class MainForm : Form
         // Configure Dogs DataGridView columns
         dgvDogs.AutoGenerateColumns = false;
         dgvDogs.Columns.Clear();
-        
+
         dgvDogs.Columns.Add(new DataGridViewTextBoxColumn
         {
             DataPropertyName = "Name",
             HeaderText = Labels.ColumnName,
             Width = 120
         });
-        
+
         dgvDogs.Columns.Add(new DataGridViewTextBoxColumn
         {
             DataPropertyName = "Breed",
             HeaderText = Labels.ColumnBreed,
             Width = 100
         });
-        
+
         dgvDogs.Columns.Add(new DataGridViewTextBoxColumn
         {
             DataPropertyName = "Age",
             HeaderText = Labels.ColumnAge,
             Width = 60
         });
-        
+
         dgvDogs.Columns.Add(new DataGridViewTextBoxColumn
         {
             DataPropertyName = "WalkCount",
             HeaderText = Labels.ColumnWalks,
             Width = 80
         });
-        
+
         // Configure Walks DataGridView columns
         dgvWalks.AutoGenerateColumns = false;
         dgvWalks.Columns.Clear();
-        
+
         dgvWalks.Columns.Add(new DataGridViewTextBoxColumn
         {
             DataPropertyName = "DateDisplay",
             HeaderText = Labels.ColumnDate,
             Width = 100
         });
-        
+
         dgvWalks.Columns.Add(new DataGridViewTextBoxColumn
         {
             DataPropertyName = "TimeDisplay",
             HeaderText = Labels.ColumnTime,
             Width = 80
         });
-        
+
         dgvWalks.Columns.Add(new DataGridViewTextBoxColumn
         {
             DataPropertyName = "DurationDisplay",
             HeaderText = Labels.ColumnDuration,
             Width = 80
         });
-        
+
         dgvWalks.Columns.Add(new DataGridViewTextBoxColumn
         {
             DataPropertyName = "NotesDisplay",
@@ -616,7 +616,7 @@ public partial class MainForm : Form
         if (e.Node?.Tag is TreeNodeViewModel selectedNode)
         {
             _treeViewModel.SelectedNode = selectedNode;
-            
+
             // Update panels based on selection type
             switch (selectedNode.NodeType)
             {
@@ -646,17 +646,17 @@ public partial class MainForm : Form
         _clientDetailViewModel.IsEditing = false;
         txtClientName.ReadOnly = true;
         txtClientPhone.ReadOnly = true;
-        
+
         // Reset button states
         btnClientEdit.Text = ButtonText.Edit;
         btnClientEdit.Enabled = true;
         btnClientDelete.Enabled = true;
         btnClientNew.Text = ButtonText.New;
         btnClientSave.Visible = false;
-        
+
         // Update dogs list using fresh data from tree model (COMPLEX BINDING)
         RefreshDogsListForClient(client.ClientId);
-        
+
         // Auto-select first dog if available to load its walks
         if (_dogsList.Count > 0)
         {
@@ -679,7 +679,7 @@ public partial class MainForm : Form
     private void HandleDogSelection(DogTreeNodeViewModel dog)
     {
         var client = _treeViewModel.Clients.First(c => c.ClientId == dog.ClientId);
-        
+
         // Update client details (SIMPLE BINDING)
         _clientDetailViewModel.ClientId = client.ClientId;
         _clientDetailViewModel.Name = client.ClientName;
@@ -687,17 +687,17 @@ public partial class MainForm : Form
         _clientDetailViewModel.IsEditing = false;
         txtClientName.ReadOnly = true;
         txtClientPhone.ReadOnly = true;
-        
+
         // Reset button states
         btnClientEdit.Text = ButtonText.Edit;
         btnClientEdit.Enabled = true;
         btnClientDelete.Enabled = true;
         btnClientNew.Text = ButtonText.New;
         btnClientSave.Visible = false;
-        
+
         // Update dogs list using fresh data (COMPLEX BINDING)
         RefreshDogsListForClient(client.ClientId);
-        
+
         // Update walks for selected dog using fresh data (COMPLEX BINDING)
         RefreshWalksListForDog(dog.DogId);
 
@@ -721,7 +721,7 @@ public partial class MainForm : Form
     {
         var client = _treeViewModel.Clients.First(c => c.ClientId == walk.ClientId);
         var dog = client.Dogs.First(d => d.DogId == walk.DogId);
-        
+
         // Update client details (SIMPLE BINDING)
         _clientDetailViewModel.ClientId = client.ClientId;
         _clientDetailViewModel.Name = client.ClientName;
@@ -729,17 +729,17 @@ public partial class MainForm : Form
         _clientDetailViewModel.IsEditing = false;
         txtClientName.ReadOnly = true;
         txtClientPhone.ReadOnly = true;
-        
+
         // Reset button states
         btnClientEdit.Text = ButtonText.Edit;
         btnClientEdit.Enabled = true;
         btnClientDelete.Enabled = true;
         btnClientNew.Text = ButtonText.New;
         btnClientSave.Visible = false;
-        
+
         // Update dogs list using fresh data (COMPLEX BINDING)
         RefreshDogsListForClient(client.ClientId);
-        
+
         // Update walks for selected dog using fresh data (COMPLEX BINDING)
         RefreshWalksListForDog(walk.DogId);
 
@@ -785,9 +785,9 @@ public partial class MainForm : Form
             _walksList.Clear();
         }
     }
-    
+
     #region Client Button Event Handlers
-    
+
     /// <summary>
     /// Cancels the current client editing operation.
     /// </summary>
@@ -796,19 +796,19 @@ public partial class MainForm : Form
         // Restore original values
         _clientDetailViewModel.Name = _originalClientName;
         _clientDetailViewModel.Phone = _originalClientPhone;
-        
+
         // Exit edit mode
         _clientDetailViewModel.IsEditing = false;
         txtClientName.ReadOnly = true;
         txtClientPhone.ReadOnly = true;
-        
+
         // Reset button states
         btnClientNew.Text = ButtonText.New;
         btnClientEdit.Text = ButtonText.Edit;
         btnClientEdit.Enabled = true;
         btnClientDelete.Enabled = true;
         btnClientSave.Visible = false;
-        
+
         // If we were creating a new client, restore the previous selection
         if (_clientDetailViewModel.ClientId == 0)
         {
@@ -828,7 +828,7 @@ public partial class MainForm : Form
             }
         }
     }
-    
+
     /// <summary>
     /// Handles the Click event of the new client button.
     /// </summary>
@@ -847,33 +847,33 @@ public partial class MainForm : Form
             // Store original values (empty for new client)
             _originalClientName = string.Empty;
             _originalClientPhone = string.Empty;
-            
+
             // Clear client details and enable editing
             _clientDetailViewModel.ClientId = 0;
             _clientDetailViewModel.Name = string.Empty;
             _clientDetailViewModel.Phone = string.Empty;
             _clientDetailViewModel.IsEditing = true;
-            
+
             // Make textboxes editable
             txtClientName.ReadOnly = false;
             txtClientPhone.ReadOnly = false;
             txtClientName.Focus();
-            
+
             // Update button states
             btnClientNew.Text = ButtonText.Cancel;
             btnClientEdit.Enabled = false;
             btnClientDelete.Enabled = false;
             btnClientSave.Visible = true;
-            
+
             // Clear dogs and walks panels
             _dogsList.Clear();
             _walksList.Clear();
-            
+
             // Clear tree selection
             treeViewHierarchy.SelectedNode = null;
         }
     }
-    
+
     /// <summary>
     /// Handles the Click event of the edit client button.
     /// </summary>
@@ -893,13 +893,13 @@ public partial class MainForm : Form
                 // Store original values for cancel functionality
                 _originalClientName = _clientDetailViewModel.Name;
                 _originalClientPhone = _clientDetailViewModel.Phone;
-                
+
                 // Enter edit mode
                 _clientDetailViewModel.IsEditing = true;
                 txtClientName.ReadOnly = false;
                 txtClientPhone.ReadOnly = false;
                 txtClientName.Focus();
-                
+
                 // Update button states
                 btnClientEdit.Text = ButtonText.Cancel;
                 btnClientSave.Visible = true;
@@ -910,7 +910,7 @@ public partial class MainForm : Form
             }
         }
     }
-    
+
     /// <summary>
     /// Handles the Click event of the save client button.
     /// </summary>
@@ -919,7 +919,7 @@ public partial class MainForm : Form
     private async void BtnClientSave_Click(object? sender, EventArgs e)
     {
         if (!_clientDetailViewModel.IsEditing) return;
-        
+
         // Create client entity for validation
         var clientToValidate = new DogWalkingApp.Domain.Entities.Client
         {
@@ -936,7 +936,7 @@ public partial class MainForm : Form
             txtClientName.Focus();
             return;
         }
-        
+
         try
         {
             // Save client through service
@@ -951,21 +951,21 @@ public partial class MainForm : Form
                 // Update existing client
                 await _walkService!.UpdateClientAsync(clientToValidate);
             }
-            
+
             _clientDetailViewModel.IsEditing = false;
             txtClientName.ReadOnly = true;
             txtClientPhone.ReadOnly = true;
-            
+
             // Reset button states
             btnClientEdit.Text = ButtonText.Edit;
             btnClientEdit.Enabled = true;
             btnClientDelete.Enabled = true;
             btnClientNew.Text = ButtonText.New;
             btnClientSave.Visible = false;
-            
+
             // Reload data and select the saved client
             await LoadHierarchicalDataAsync(false, _clientDetailViewModel.ClientId);
-            
+
             MessageBox.Show(UserMessages.ClientSavedSuccessfully, UserMessages.Success, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         catch (Exception ex)
@@ -973,7 +973,7 @@ public partial class MainForm : Form
             MessageBox.Show(string.Format(UserMessages.ErrorSavingClient, ex.Message), UserMessages.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
-    
+
     /// <summary>
     /// Handles the Click event of the delete client button.
     /// </summary>
@@ -986,17 +986,17 @@ public partial class MainForm : Form
             MessageBox.Show(UserMessages.PleaseSelectClientToDelete, UserMessages.NoSelection, MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
-        
-        var result = MessageBox.Show(string.Format(UserMessages.ConfirmDeleteClient, _clientDetailViewModel.Name), 
+
+        var result = MessageBox.Show(string.Format(UserMessages.ConfirmDeleteClient, _clientDetailViewModel.Name),
             FormTitles.ConfirmDelete, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-        
+
         if (result == DialogResult.Yes)
         {
             try
             {
                 // Delete client through service
                 await _walkService!.DeleteClientAsync(_clientDetailViewModel.ClientId);
-                
+
                 // Clear panels
                 _clientDetailViewModel.ClientId = 0;
                 _clientDetailViewModel.Name = string.Empty;
@@ -1004,23 +1004,23 @@ public partial class MainForm : Form
                 _clientDetailViewModel.IsEditing = false;
                 txtClientName.ReadOnly = true;
                 txtClientPhone.ReadOnly = true;
-                
+
                 // Reset button states
                 btnClientEdit.Text = ButtonText.Edit;
                 btnClientEdit.Enabled = true;
                 btnClientDelete.Enabled = true;
                 btnClientNew.Text = ButtonText.New;
                 btnClientSave.Visible = false;
-                
+
                 _dogsList.Clear();
                 _walksList.Clear();
-                
+
                 // Clear tree selection
                 treeViewHierarchy.SelectedNode = null;
-                
+
                 // Reload data without any selection
                 await LoadHierarchicalDataAsync();
-                
+
                 MessageBox.Show(UserMessages.ClientDeletedSuccessfully, UserMessages.Success, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -1029,11 +1029,11 @@ public partial class MainForm : Form
             }
         }
     }
-    
+
     #endregion
-    
+
     #region Dog Button Event Handlers
-    
+
     /// <summary>
     /// Handles the Click event of the new dog button.
     /// </summary>
@@ -1046,7 +1046,7 @@ public partial class MainForm : Form
             MessageBox.Show(UserMessages.PleaseSelectClientForDog, UserMessages.NoClientSelected, MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
-        
+
         using var dogEditor = new DogEditorForm(_clientDetailViewModel.ClientId);
         if (dogEditor.ShowDialog(this) == DialogResult.OK && dogEditor.EditedDog != null)
         {
@@ -1063,7 +1063,7 @@ public partial class MainForm : Form
             }
         }
     }
-    
+
     /// <summary>
     /// Handles the Click event of the edit dog button.
     /// </summary>
@@ -1076,9 +1076,9 @@ public partial class MainForm : Form
             MessageBox.Show(UserMessages.PleaseSelectDogToEdit, UserMessages.NoSelection, MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
-        
+
         var selectedDog = (DogGridRowViewModel)dgvDogs.SelectedRows[0].DataBoundItem;
-        
+
         // Create a Dog entity for editing
         var dogToEdit = new DogWalkingApp.Domain.Entities.Dog
         {
@@ -1088,7 +1088,7 @@ public partial class MainForm : Form
             Breed = selectedDog.Breed,
             Age = selectedDog.Age
         };
-        
+
         using var dogEditor = new DogEditorForm(selectedDog.ClientId, dogToEdit);
         if (dogEditor.ShowDialog(this) == DialogResult.OK && dogEditor.EditedDog != null)
         {
@@ -1105,7 +1105,7 @@ public partial class MainForm : Form
             }
         }
     }
-    
+
     /// <summary>
     /// Handles the Click event of the delete dog button.
     /// </summary>
@@ -1118,21 +1118,21 @@ public partial class MainForm : Form
             MessageBox.Show(UserMessages.PleaseSelectDogToDelete, UserMessages.NoSelection, MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
-        
+
         var selectedDog = (DogGridRowViewModel)dgvDogs.SelectedRows[0].DataBoundItem;
-        var result = MessageBox.Show(string.Format(UserMessages.ConfirmDeleteDog, selectedDog.Name), 
+        var result = MessageBox.Show(string.Format(UserMessages.ConfirmDeleteDog, selectedDog.Name),
             FormTitles.ConfirmDelete, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-        
+
         if (result == DialogResult.Yes)
         {
             try
             {
                 // Delete dog through service
                 await _walkService!.DeleteDogAsync(selectedDog.DogId);
-                
+
                 // Clear walks panel since the dog is deleted
                 _walksList.Clear();
-                
+
                 // Reload data and select the parent client
                 await LoadHierarchicalDataAsync(false, selectedDog.ClientId);
                 MessageBox.Show(UserMessages.DogDeletedSuccessfully, UserMessages.Success, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1143,11 +1143,11 @@ public partial class MainForm : Form
             }
         }
     }
-    
+
     #endregion
-    
+
     #region Walk Button Event Handlers
-    
+
     /// <summary>
     /// Handles the Click event of the new walk button.
     /// </summary>
@@ -1160,9 +1160,9 @@ public partial class MainForm : Form
             MessageBox.Show(UserMessages.PleaseSelectDogForWalk, UserMessages.NoDogSelected, MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
-        
+
         var selectedDog = (DogGridRowViewModel)dgvDogs.SelectedRows[0].DataBoundItem;
-        
+
         using var walkEditor = new WalkEditorForm(_clientDetailViewModel.ClientId, selectedDog.DogId, selectedDog.Name);
         if (walkEditor.ShowDialog(this) == DialogResult.OK && walkEditor.EditedWalk != null)
         {
@@ -1179,7 +1179,7 @@ public partial class MainForm : Form
             }
         }
     }
-    
+
     /// <summary>
     /// Handles the Click event of the edit walk button.
     /// </summary>
@@ -1192,10 +1192,10 @@ public partial class MainForm : Form
             MessageBox.Show(UserMessages.PleaseSelectWalkToEdit, UserMessages.NoSelection, MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
-        
+
         var selectedWalk = (WalkGridRowViewModel)dgvWalks.SelectedRows[0].DataBoundItem;
         var selectedDog = (DogGridRowViewModel)dgvDogs.SelectedRows[0].DataBoundItem;
-        
+
         // Create a Walk entity for editing
         var walkToEdit = new DogWalkingApp.Domain.Entities.Walk
         {
@@ -1206,7 +1206,7 @@ public partial class MainForm : Form
             DurationMinutes = selectedWalk.DurationMinutes,
             Notes = selectedWalk.Notes
         };
-        
+
         using var walkEditor = new WalkEditorForm(selectedWalk.ClientId, selectedWalk.DogId, selectedDog.Name, walkToEdit);
         if (walkEditor.ShowDialog(this) == DialogResult.OK && walkEditor.EditedWalk != null)
         {
@@ -1223,7 +1223,7 @@ public partial class MainForm : Form
             }
         }
     }
-    
+
     /// <summary>
     /// Handles the Click event of the delete walk button.
     /// </summary>
@@ -1236,18 +1236,18 @@ public partial class MainForm : Form
             MessageBox.Show(UserMessages.PleaseSelectWalkToDelete, UserMessages.NoSelection, MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
-        
+
         var selectedWalk = (WalkGridRowViewModel)dgvWalks.SelectedRows[0].DataBoundItem;
-        var result = MessageBox.Show(string.Format(UserMessages.ConfirmDeleteWalk, selectedWalk.DateDisplay), 
+        var result = MessageBox.Show(string.Format(UserMessages.ConfirmDeleteWalk, selectedWalk.DateDisplay),
             FormTitles.ConfirmDelete, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-        
+
         if (result == DialogResult.Yes)
         {
             try
             {
                 // Delete walk through service
                 await _walkService!.DeleteWalkAsync(selectedWalk.WalkId);
-                
+
                 // Reload data and select the parent dog
                 await LoadHierarchicalDataAsync(false, null, selectedWalk.DogId);
                 MessageBox.Show(UserMessages.WalkDeletedSuccessfully, UserMessages.Success, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1258,6 +1258,13 @@ public partial class MainForm : Form
             }
         }
     }
-    
+
     #endregion
+
+    /// <summary>
+    /// Handles the Click event of the exit file menu item.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event data.</param>
+    private void ExitFileMenuItem_Click(object sender, EventArgs e) => Close();
 }

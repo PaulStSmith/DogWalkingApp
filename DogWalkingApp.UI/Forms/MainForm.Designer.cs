@@ -59,6 +59,9 @@ partial class MainForm
         btnWalkNew = new Button();
         dgvWalks = new DataGridView();
         lblWalksTitle = new Label();
+        menuMain = new MenuStrip();
+        fileMainMenuItem = new ToolStripMenuItem();
+        exitFileMenuItem = new ToolStripMenuItem();
         ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
         splitContainer1.Panel1.SuspendLayout();
         splitContainer1.Panel2.SuspendLayout();
@@ -77,12 +80,13 @@ partial class MainForm
         ((System.ComponentModel.ISupportInitialize)dgvDogs).BeginInit();
         panelWalks.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)dgvWalks).BeginInit();
+        menuMain.SuspendLayout();
         SuspendLayout();
         // 
         // splitContainer1
         // 
         splitContainer1.Dock = DockStyle.Fill;
-        splitContainer1.Location = new Point(0, 0);
+        splitContainer1.Location = new Point(0, 24);
         splitContainer1.Name = "splitContainer1";
         // 
         // splitContainer1.Panel1
@@ -95,7 +99,7 @@ partial class MainForm
         // 
         splitContainer1.Panel2.Controls.Add(splitContainer2);
         splitContainer1.Panel2MinSize = 580;
-        splitContainer1.Size = new Size(1000, 601);
+        splitContainer1.Size = new Size(1000, 577);
         splitContainer1.SplitterDistance = 416;
         splitContainer1.TabIndex = 4;
         // 
@@ -107,7 +111,7 @@ partial class MainForm
         treeViewHierarchy.Location = new Point(0, 41);
         treeViewHierarchy.MinimumSize = new Size(300, 0);
         treeViewHierarchy.Name = "treeViewHierarchy";
-        treeViewHierarchy.Size = new Size(416, 560);
+        treeViewHierarchy.Size = new Size(416, 536);
         treeViewHierarchy.TabIndex = 1;
         // 
         // panel1
@@ -134,7 +138,7 @@ partial class MainForm
         label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
         label1.Location = new Point(3, 11);
         label1.Name = "label1";
-        label1.Size = new Size(0, 19);
+        label1.Size = new Size(78, 19);
         label1.TabIndex = 1;
         label1.Text = "🔍 Search";
         // 
@@ -153,7 +157,7 @@ partial class MainForm
         // splitContainer2.Panel2
         // 
         splitContainer2.Panel2.Controls.Add(splitContainer3);
-        splitContainer2.Size = new Size(580, 601);
+        splitContainer2.Size = new Size(580, 577);
         splitContainer2.SplitterDistance = 160;
         splitContainer2.TabIndex = 0;
         // 
@@ -228,7 +232,7 @@ partial class MainForm
         lblClientPhone.AutoSize = true;
         lblClientPhone.Location = new Point(30, 79);
         lblClientPhone.Name = "lblClientPhone";
-        lblClientPhone.Size = new Size(0, 15);
+        lblClientPhone.Size = new Size(44, 15);
         lblClientPhone.TabIndex = 3;
         lblClientPhone.Text = "Phone:";
         // 
@@ -244,7 +248,7 @@ partial class MainForm
         lblClientName.AutoSize = true;
         lblClientName.Location = new Point(32, 50);
         lblClientName.Name = "lblClientName";
-        lblClientName.Size = new Size(0, 15);
+        lblClientName.Size = new Size(42, 15);
         lblClientName.TabIndex = 1;
         lblClientName.Text = "Name:";
         // 
@@ -254,7 +258,7 @@ partial class MainForm
         lblClientTitle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
         lblClientTitle.Location = new Point(10, 10);
         lblClientTitle.Name = "lblClientTitle";
-        lblClientTitle.Size = new Size(0, 19);
+        lblClientTitle.Size = new Size(120, 19);
         lblClientTitle.TabIndex = 0;
         lblClientTitle.Text = "🙍 Client Details";
         // 
@@ -273,7 +277,7 @@ partial class MainForm
         // splitContainer3.Panel2
         // 
         splitContainer3.Panel2.Controls.Add(panelWalks);
-        splitContainer3.Size = new Size(580, 437);
+        splitContainer3.Size = new Size(580, 413);
         splitContainer3.SplitterDistance = 190;
         splitContainer3.TabIndex = 0;
         // 
@@ -341,7 +345,7 @@ partial class MainForm
         lblDogsTitle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
         lblDogsTitle.Location = new Point(10, 10);
         lblDogsTitle.Name = "lblDogsTitle";
-        lblDogsTitle.Size = new Size(0, 19);
+        lblDogsTitle.Size = new Size(194, 19);
         lblDogsTitle.TabIndex = 0;
         lblDogsTitle.Text = "🐕 Dogs for Selected Client";
         // 
@@ -355,9 +359,9 @@ partial class MainForm
         panelWalks.Controls.Add(lblWalksTitle);
         panelWalks.Dock = DockStyle.Fill;
         panelWalks.Location = new Point(0, 0);
-        panelWalks.MinimumSize = new Size(580, 240);
+        panelWalks.MinimumSize = new Size(580, 200);
         panelWalks.Name = "panelWalks";
-        panelWalks.Size = new Size(580, 243);
+        panelWalks.Size = new Size(580, 219);
         panelWalks.TabIndex = 4;
         // 
         // btnWalkDelete
@@ -400,7 +404,7 @@ partial class MainForm
         dgvWalks.Name = "dgvWalks";
         dgvWalks.ReadOnly = true;
         dgvWalks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        dgvWalks.Size = new Size(470, 199);
+        dgvWalks.Size = new Size(470, 175);
         dgvWalks.TabIndex = 1;
         // 
         // lblWalksTitle
@@ -409,9 +413,33 @@ partial class MainForm
         lblWalksTitle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
         lblWalksTitle.Location = new Point(10, 10);
         lblWalksTitle.Name = "lblWalksTitle";
-        lblWalksTitle.Size = new Size(0, 19);
+        lblWalksTitle.Size = new Size(189, 19);
         lblWalksTitle.TabIndex = 0;
         lblWalksTitle.Text = "🚶 Walks for Selected Dog";
+        // 
+        // menuMain
+        // 
+        menuMain.Items.AddRange(new ToolStripItem[] { fileMainMenuItem });
+        menuMain.Location = new Point(0, 0);
+        menuMain.Name = "menuMain";
+        menuMain.Size = new Size(1000, 24);
+        menuMain.TabIndex = 3;
+        menuMain.Text = "menuStrip1";
+        // 
+        // fileMainMenuItem
+        // 
+        fileMainMenuItem.DropDownItems.AddRange(new ToolStripItem[] { exitFileMenuItem });
+        fileMainMenuItem.Name = "fileMainMenuItem";
+        fileMainMenuItem.Size = new Size(37, 20);
+        fileMainMenuItem.Text = "&File";
+        // 
+        // exitFileMenuItem
+        // 
+        exitFileMenuItem.Name = "exitFileMenuItem";
+        exitFileMenuItem.ShortcutKeyDisplayString = "Alt+F4";
+        exitFileMenuItem.Size = new Size(180, 22);
+        exitFileMenuItem.Text = "E&xit";
+        exitFileMenuItem.Click += ExitFileMenuItem_Click;
         // 
         // MainForm
         // 
@@ -419,6 +447,8 @@ partial class MainForm
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(1000, 601);
         Controls.Add(splitContainer1);
+        Controls.Add(menuMain);
+        MainMenuStrip = menuMain;
         MinimumSize = new Size(1000, 640);
         Name = "MainForm";
         StartPosition = FormStartPosition.CenterScreen;
@@ -445,7 +475,10 @@ partial class MainForm
         panelWalks.ResumeLayout(false);
         panelWalks.PerformLayout();
         ((System.ComponentModel.ISupportInitialize)dgvWalks).EndInit();
+        menuMain.ResumeLayout(false);
+        menuMain.PerformLayout();
         ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
@@ -478,4 +511,7 @@ partial class MainForm
     private Panel panel1;
     private TextBox txtSearchTerm;
     private Label label1;
+    private MenuStrip menuMain;
+    private ToolStripMenuItem fileMainMenuItem;
+    private ToolStripMenuItem exitFileMenuItem;
 }
