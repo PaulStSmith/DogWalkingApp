@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,56 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="New" xml:space="preserve">
-    <value>🆕 Nuevo</value>
-    <comment>Texto del botón para crear nuevos elementos</comment>
+  <data name="ExitMenuText" xml:space="preserve">
+    <value>&amp;Salir</value>
   </data>
-  <data name="Edit" xml:space="preserve">
-    <value>✏️ Editar</value>
-    <comment>Texto del botón para editar elementos existentes</comment>
-  </data>
-  <data name="Delete" xml:space="preserve">
-    <value>🗑️ Eliminar</value>
-    <comment>Texto del botón para eliminar elementos</comment>
-  </data>
-  <data name="Save" xml:space="preserve">
-    <value>💾 Guardar</value>
-    <comment>Texto del botón para guardar cambios</comment>
-  </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>❌ Cancelar</value>
-    <comment>Texto del botón para cancelar operaciones</comment>
-  </data>
-  <data name="Login" xml:space="preserve">
-    <value>🔑 Iniciar Sesión</value>
-    <comment>Texto del botón para inicio de sesión de usuario</comment>
-  </data>
-  <data name="LoginWithKey" xml:space="preserve">
-    <value>&amp;Iniciar Sesión</value>
-    <comment>Texto del botón de inicio de sesión con tecla aceleradora</comment>
-  </data>
-  <data name="CancelWithKey" xml:space="preserve">
-    <value>&amp;Cancelar</value>
-    <comment>Texto del botón cancelar con tecla aceleradora</comment>
-  </data>
-  <data name="Exit" xml:space="preserve">
-    <value>🚪 Salir</value>
-    <comment>Texto del botón para salir de la aplicación</comment>
-  </data>
-  <data name="Add" xml:space="preserve">
-    <value>➕ Agregar</value>
-    <comment>Texto del botón para agregar nuevos elementos</comment>
-  </data>
-  <data name="SearchClear" xml:space="preserve">
-    <value>Limpiar</value>
-    <comment>Texto del botón para limpiar búsqueda</comment>
-  </data>
-  <data name="AddDog" xml:space="preserve">
-    <value>🐕 Agregar Perro</value>
-    <comment>Texto del botón para agregar un nuevo perro</comment>
-  </data>
-  <data name="AddWalk" xml:space="preserve">
-    <value>🚶 Agregar Paseo</value>
-    <comment>Texto del botón para agregar un nuevo paseo</comment>
+  <data name="FileMenuText" xml:space="preserve">
+    <value>&amp;Archivo</value>
   </data>
 </root>

@@ -15,6 +15,8 @@ static class Program
     [STAThread]
     static async Task Main()
     {
+        SetApplicationCulture("es-ES"); // Change to desired culture code for testing
+
         // To customize application configuration such as set high DPI settings or default font,
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();

@@ -74,6 +74,9 @@ public partial class MainForm : Form
         btnWalkEdit.Text = ButtonText.Edit;
         btnWalkDelete.Text = ButtonText.Delete;
 
+        fileMainMenuItem.Text = MenuText.FileMenuText;
+        exitFileMenuItem.Text = MenuText.ExitMenuText;
+
         // Apply localized sizing
         ApplyLocalizedSizing();
     }

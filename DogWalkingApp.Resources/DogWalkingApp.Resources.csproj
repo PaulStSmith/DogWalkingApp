@@ -28,6 +28,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Labels.resx</DependentUpon>
     </Compile>
+    <Compile Update="MenuText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MenuText.resx</DependentUpon>
+    </Compile>
     <Compile Update="UserMessages.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -55,6 +60,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>FormTitles.Designer.cs</LastGenOutput>
       <CustomToolNamespace></CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MenuText.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MenuText.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="ValidationMessages.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
